@@ -1,0 +1,14 @@
+.container {
+    max-width: 970px;
+}
+h2, h3, h4, span {
+    text-align: center;
+}
+img {
+    width:100%;
+    border: 1px solid gray;
+}
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
