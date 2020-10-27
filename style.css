@@ -12,3 +12,19 @@ p {
     text-align: justify;
     text-justify: inter-word;
 }
+
+.main {
+    position: absolute;
+    left: 25%;
+    top: 75%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .face {
+    position: absolute;
+    left: 75%;
+    top: 75%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
