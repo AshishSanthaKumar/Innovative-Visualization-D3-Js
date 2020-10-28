@@ -106,7 +106,78 @@ var line5 = svg.append('line')
                     .attr("y2", 450);
 
 
+//Male - 100
 
+//Dezik
+svg.append("circle")
+            .attr("r",4)
+            .attr("cx",340)
+            .attr("cy",450)
+            .style("fill","blue");
+    
+//Gypsy
+svg.append("circle")
+            .attr("r",4)
+            .attr("cx",355)
+            .attr("cy",450)
+            .style("fill","blue");
+
+//siskin
+svg.append("circle")
+            .attr("r",4)
+            .attr("cx",370)
+            .attr("cy",450)
+            .style("fill","blue");
+
+//Little bear
+svg.append("circle")
+            .attr("r",4)
+            .attr("cx",385)
+            .attr("cy",450)
+            .style("fill","blue");
+
+//Ginger
+svg.append("circle")
+            .attr("r",4)
+            .attr("cx",400)
+            .attr("cy",450)
+            .style("fill","blue");
+
+//Courageous
+svg.append("circle")
+            .attr("r",4)
+            .attr("cx",416)
+            .attr("cy",444)
+            .style("fill","blue");
+
+//Scamp
+svg.append("circle")
+            .attr("r",4)
+            .attr("cx",406)
+            .attr("cy",429)
+            .style("fill","blue");
+
+//Bobik
+svg.append("circle")
+            .attr("r",4)
+            .attr("cx",394)
+            .attr("cy",413)
+            .style("fill","blue");
+
+//Ginger II
+svg.append("circle")
+            .attr("r",4)
+            .attr("cx",381)
+            .attr("cy",394)
+            .style("fill","blue");
+
+
+//Little bear II
+svg.append("circle")
+            .attr("r",4)
+            .attr("cx",372)
+            .attr("cy",380)
+            .style("fill","blue");
                 
  
 
