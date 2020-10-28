@@ -55,28 +55,61 @@ var rectangle_blue = svg.append("rect")
 
 var rectangle_rocket = svg.append("rect")
                     .attr("class","rocket")
-                    .attr("x", 250)
+                    .attr("x", 235)
                     .attr("y", 120)
-                    .attr("width", 100)
-                    .attr("height", 200);
+                    .attr("width", 130)
+                    .attr("height", 250);
 
  var line1 = svg.append('line')
                     .style("stroke", "black")
                     .style("stroke-width", 1)
                     .style("opacity",0.1)
-                    .attr("x1", 250)
+                    .attr("x1", 235)
                     .attr("y1", 120)
                     .attr("x2", 300)
-                    .attr("y2", 60); 
+                    .attr("y2", 20); 
 
 var line2 = svg.append('line')
                     .style("stroke", "black")
                     .style("stroke-width", 1)
                     .style("opacity",0.1)
                     .attr("x1", 300)
-                    .attr("y1", 60)
-                    .attr("x2", 350)
+                    .attr("y1", 20)
+                    .attr("x2", 365)
                     .attr("y2", 120); 
+
+var line3 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.1)
+                    .attr("x1", 235)
+                    .attr("y1", 370)
+                    .attr("x2", 180)
+                    .attr("y2", 450);
+
+var line4 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.1)
+                    .attr("x1", 365)
+                    .attr("y1", 370)
+                    .attr("x2", 420)
+                    .attr("y2", 450);
+
+var line5 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.1)
+                    .attr("x1", 180)
+                    .attr("y1", 450)
+                    .attr("x2", 420)
+                    .attr("y2", 450);
+
+
+
+                
+ 
+
 
 
 
