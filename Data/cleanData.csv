@@ -1,45 +1,45 @@
-﻿Name,Gender,Year,Altitude,Fate
-Dezik,Male,1951,100,Died
-Gypsy,Male,1951,100,Survived
-Fox,Female,1951,100,Died
-Siskin,Male,1951,100,Died
-Little Bear,Male,1951,100,Died
-Ginger,Male,1951,100,Survived
-Courageous,Male,1951,100,Survived
-Scamp,Male,1951,100,Survived
-Substitute for Missing Bobik,Male,1951,100,Survived
-Fox II,Female,1955,100,Died
-Ginger II,Male,1954,100,Died
-Little Lady,Female,1954,100,Survived
-Little Bear II,Male,1954,100,Died
-Rita,Female,1955,100,Died
-Linda,Female,1956,100,Survived
-Bulba,Female,1955,100,Died
-Button,Female,1958,451,Died
-Little One,Female,1956,100,Survived
-Whitey,Female,1956,100,Survived
-Dzhoyna,Female,1957,212,Died
-Redhead,Female,1957,212,Died
-Squirrel,Female,1960,1000,Survived
-Fashionable,Female,1957,212,Survived
-Barker,Female,1957,1000,Died
-Palm,Female,1958,451,Died
-Fluffy,Male,1958,451,Died
-Biter,Female,1958,212,Survived
-Palm II,Female,1960,212,Survived
-Little Whitey,Female,1958,451,Survived
-Spotted,Female,1958,451,Survived
-Zhulba,Female,1958,451,Died
-Snowflake,Female,1960,212,Survived
-Small Fry,Male,1960,212,Survived
-Little Fox,Female,1960,1000,Died
-Panther,Female,1960,1000,Died
-Little Arrow,Female,1960,1000,Survived
-Little Fly,Female,1960,1000,Died
-Little Bee,Female,1960,1000,Died
-Joke,Female,1960,1000,Survived
-Blackie,Female,1961,1000,Survived
-Comet,Female,1960,1000,Survived
-Little Star,Female,1961,1000,Survived
-Little Piece of Coal,Male,1966,1000,Survived
-Little Wind,Male,1966,1000,Survived
+﻿Name,X,Y,Gender,Year,Altitude,Fate
+Dezik,340,450,Male,1951,100,Died
+Gypsy,355,450,Male,1951,100,Survived
+Fox,228,380,Female,1951,100,Died
+Siskin,370,450,Male,1951,100,Died
+Little Bear,385,450,Male,1951,100,Died
+Ginger,400,450,Male,1951,100,Survived
+Courageous,418,450,Male,1951,100,Survived
+Scamp,406,429,Male,1951,100,Survived
+Bobik,394,413,Male,1951,100,Survived
+Fox II,218,394,Female,1955,100,Died
+Ginger II,381,394,Male,1954,100,Died
+Little Lady,206,413,Female,1954,100,Survived
+Little Bear II,372,380,Male,1954,100,Died
+Rita,195,429,Female,1955,100,Died
+Linda,181,450,Female,1956,100,Survived
+Bulba,200,450,Female,1955,100,Died
+Button,235,220,Female,1958,451,Died
+Little One,215,450,Female,1956,100,Survived
+Whitey,230,450,Female,1956,100,Survived
+Dzhoyna,235,360,Female,1957,212,Died
+Redhead,235,340,Female,1957,212,Died
+Squirrel,287,40,Female,1960,1000,Survived
+Fashionable,235,320,Female,1957,212,Survived
+Barker,277,55,Female,1957,1000,Died
+Palm,235,200,Female,1958,451,Died
+Fluffy,366,180,Male,1958,451,Died
+Biter,235,300,Female,1958,212,Survived
+Palm II,235,280,Female,1960,212,Survived
+Little Whitey,235,180,Female,1958,451,Survived
+Spotted,235,160,Female,1958,451,Survived
+Zhulba,235,140,Female,1958,451,Died
+Snowflake,235,260,Female,1960,212,Survived
+Small Fry,366,305,Male,1960,212,Survived
+Little Fox,267,70,Female,1960,1000,Died
+Panther,257,85,Female,1960,1000,Died
+Little Arrow,247,100,Female,1960,1000,Survived
+Little Fly,235,118,Female,1960,1000,Died
+Little Bee,247,118,Female,1960,1000,Died
+Joke,262,118,Female,1960,1000,Survived
+Blackie,277,118,Female,1961,1000,Survived
+Comet,292,118,Female,1960,1000,Survived
+Little Star,295,27,Female,1961,1000,Survived
+Little Piece of Coal,353,100,Male,1966,1000,Survived
+Little Wind,339,80,Male,1966,1000,Survived
