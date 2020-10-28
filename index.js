@@ -105,6 +105,55 @@ var line5 = svg.append('line')
                     .attr("x2", 420)
                     .attr("y2", 450);
 
+//100 label
+
+svg.append("text")
+        .attr("transform", "rotate(90)")
+        .attr("y", -305)
+        .attr("x", 378)
+        .text("<--100-->")
+        .style("z-index", "100")
+        .style("color","black")
+        .style("font-size","14px")
+        .style("font-weight","400"); 
+
+//212 label
+
+svg.append("text")
+        .attr("transform", "rotate(90)")
+        .attr("y", -305)
+        .attr("x", 245)
+        .text("<------190------>")
+        .style("z-index", "100")
+        .style("color","black")
+        .style("font-size","14px")
+        .style("font-weight","400"); 
+
+//451 label
+
+svg.append("text")
+        .attr("transform", "rotate(90)")
+        .attr("y", -305)
+        .attr("x", 120)
+        .text("<------451------>")
+        .style("z-index", "100")
+        .style("color","black")
+        .style("font-size","14px")
+        .style("font-weight","400"); 
+
+//Orbital label
+
+svg.append("text")
+        .attr("transform", "rotate(90)")
+        .attr("y", -305)
+        .attr("x", 40)
+        .text("<-orbital->")
+        .style("z-index", "100")
+        .style("color","black")
+        .style("font-size","14px")
+        .style("font-weight","400"); 
+
+
 
 //Male - 100
 
