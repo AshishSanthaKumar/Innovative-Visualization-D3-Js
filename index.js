@@ -178,14 +178,12 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function(values){
       
       data = values[0];
-      
-
 
     })
     
   });
 
-smile();
+cry();
 
 function smile(){
     svg_face.append("circle")
