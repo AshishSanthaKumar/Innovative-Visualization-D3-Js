@@ -28,3 +28,23 @@ p {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+
+  .rectDead{
+    fill: pink;
+    opacity: 0.5;
+    stroke-width: 1;
+    stroke: black;
+  }
+
+.rectAlive{
+    opacity: 0.5;
+    stroke-width: 1;
+    stroke: black;
+    fill: cornflowerblue;
+}
+
+.rocket{
+    opacity: 0.1;
+    stroke-width: 2;
+    stroke: black;
+}

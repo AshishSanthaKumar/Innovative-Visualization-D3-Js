@@ -3,6 +3,8 @@ var gender;
 var year;
 var altitude;
 var fate;
+var data;
+
 
 // Set the dimensions of the canvas / graph
 
@@ -16,22 +18,67 @@ var svg = d3.select(".main").append("svg")
                            .append("g")
                            .attr("transform", `translate(${margin.left},${margin.top})`);    
 
-var svg = d3.select(".face").append("svg")
+var svg_face = d3.select(".face").append("svg")
                            .attr("width", width + margin.left + margin.right)
                            .attr("height", height + margin.top + margin.bottom)
                            .append("g")
                            .attr("transform", `translate(${margin.left},${margin.top})`);
 
 // Get the data
-var data = d3.csv("data/cleanData.csv").then(data => {
+document.addEventListener('DOMContentLoaded', function() {
+   
+    // Load both files before doing anything else
+    Promise.all([d3.csv('data/cleanData.csv')])
+            .then(function(values){
+      
+      data = values[0];
+      console.log(data);
+    })
+  
+  });
 
-    // format the data such that strings are converted to their appropriate types
-    data.forEach(function(d) {
-        name = d.Name;
-        gender = d.Gender;
-        year = +d.Year
-        altitude = +d.Altitude;
-        fate = d.Fate
-    })})
-    
-console.log(data.name);
+var rectangle_pink = svg.append("rect")
+                    .attr("class","rectDead")
+                    .attr("x", -50)
+                    .attr("y", -10)
+                    .attr("width", 350)
+                    .attr("height", 500);
+
+var rectangle_blue = svg.append("rect")
+                    .attr("class","rectAlive")
+                    .attr("x", 300)
+                    .attr("y", -10)
+                    .attr("width", 350)
+                    .attr("height", 500);
+
+
+
+var rectangle_rocket = svg.append("rect")
+                    .attr("class","rocket")
+                    .attr("x", 250)
+                    .attr("y", 120)
+                    .attr("width", 100)
+                    .attr("height", 200);
+
+ var line1 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.1)
+                    .attr("x1", 250)
+                    .attr("y1", 120)
+                    .attr("x2", 300)
+                    .attr("y2", 60); 
+
+var line2 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.1)
+                    .attr("x1", 300)
+                    .attr("y1", 60)
+                    .attr("x2", 350)
+                    .attr("y2", 120); 
+
+
+
+
+
