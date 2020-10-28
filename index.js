@@ -1,3 +1,4 @@
+//import { select, arc} from d3;
 var name;
 var gender;
 var year;
@@ -184,8 +185,105 @@ document.addEventListener('DOMContentLoaded', function() {
     
   });
 
+smile();
 
+function smile(){
+    svg_face.append("circle")
+            .attr("r",100)
+            .attr("cx",320)
+            .attr("cy",200)
+            .style("fill","yellow");
 
+    svg_face.append("circle")
+            .attr("r",10)
+            .attr("cx",290)
+            .attr("cy",170)
+            .style("fill","black");
+    
+    svg_face.append("circle")
+            .attr("r",10)
+            .attr("cx",360)
+            .attr("cy",170)
+            .style("fill","black");
+
+    svg_face.append('line')
+            .style("stroke", "black")
+            .style("stroke-width", 7)
+            .style("opacity",1)
+            .attr("x1", 320)
+            .attr("y1", 190)
+            .attr("x2", 320)
+            .attr("y2", 230);
+
+    svg_face.append('line')
+            .style("stroke", "black")
+            .style("stroke-width", 7)
+            .style("opacity",1)
+            .attr("x1", 320)
+            .attr("y1", 230)
+            .attr("x2", 330)
+            .attr("y2", 220);
+
+    var arc = d3.arc()
+            .innerRadius(50)
+            .outerRadius(60)
+            .startAngle(Math.PI/2) //converting from degs to radians
+            .endAngle(Math.PI * 3/2); //just radians
+        
+    svg_face.append("path")
+            .attr("d", arc)
+            .attr("transform", "translate(320,215)");
+
+}
+
+function cry(){
+    svg_face.append("circle")
+            .attr("r",100)
+            .attr("cx",320)
+            .attr("cy",200)
+            .style("fill","grey");
+
+    svg_face.append("circle")
+            .attr("r",10)
+            .attr("cx",290)
+            .attr("cy",170)
+            .style("fill","black");
+    
+    svg_face.append("circle")
+            .attr("r",10)
+            .attr("cx",360)
+            .attr("cy",170)
+            .style("fill","black");
+
+    svg_face.append('line')
+            .style("stroke", "black")
+            .style("stroke-width", 7)
+            .style("opacity",1)
+            .attr("x1", 320)
+            .attr("y1", 190)
+            .attr("x2", 320)
+            .attr("y2", 230);
+
+    svg_face.append('line')
+            .style("stroke", "black")
+            .style("stroke-width", 7)
+            .style("opacity",1)
+            .attr("x1", 320)
+            .attr("y1", 230)
+            .attr("x2", 330)
+            .attr("y2", 220);
+
+    var arc = d3.arc()
+            .innerRadius(50)
+            .outerRadius(60)
+            .startAngle(5.3) //converting from degs to radians
+            .endAngle(7.2); //just radians Math.PI * 3/2
+        
+    svg_face.append("path")
+            .attr("d", arc)
+            .attr("transform", "translate(325,300)");
+
+}
 
 
 
