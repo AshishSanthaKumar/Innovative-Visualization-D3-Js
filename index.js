@@ -7,6 +7,7 @@ var fate;
 var data;
 var X;
 var Y;
+var div;
 var points;
 var tempX=[];
 var tempY=[];
@@ -18,6 +19,11 @@ var cord=[];
 const margin = {top: 10, right: 20, bottom: 50, left: 50};
 const width = 700 - margin.left - margin.right;
 const height = 570 - margin.top - margin.bottom;
+
+//tooltip
+div = d3.select("body").append("div")
+     .attr("class", "tooltip-map")
+     .style("opacity", 0);
 
 //Defining the Canvas
 
@@ -192,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 "X":d.X,
                                 "Y":d.Y,
                                 "Name":d.Name,
-                                "Gender":d.Gender
+                                "Fate":d.Fate
                         });
 
                 })
@@ -209,7 +215,42 @@ document.addEventListener('DOMContentLoaded', function() {
                         .attr("r", 4)
                         .style("fill","black")
                         .style("opacity",0.5)
-                        .style("stroke","black");
+                        .style("stroke","black")
+                        .on('mouseover', function(d,i) {
+                                //Setting Cyan Border and making the tooltip visible
+                                d3.select(this).style("stroke", 'cyan').style("stroke-width", 4);
+                                div.html("Dog's Name: "+d.Name)
+                                .style("left", (d3.event.pageX + 10) + "px")
+                                .style("top", (d3.event.pageY - 15) + "px")
+                                .style("visibility", "visible")
+                                .attr("data-html", "true");
+                        })
+                        .on('mousemove',function(d,i) {
+                                d3.select(this).transition()
+                                .duration('50')
+                                .attr('opacity', '.85');
+                          div.transition()
+                                .duration(50)
+                                .style("opacity", 1);
+                
+                                div.html("Dog's Name: "+d.Name)
+                                     .style("left", (d3.event.pageX + 10) + "px")
+                                     .style("top", (d3.event.pageY - 15) + "px");
+                          })
+                          .on('mouseout', function(d,i) {
+                                d3.select(this).style("stroke", 'black').style("stroke-width", 1);
+                                div.style("visibility", "hidden");
+                        })
+                        .on('click', function(d,i) {
+                                svg_face.selectAll("*").remove();
+                                d3.select(this).style("stroke", 'cyan')
+                                .style("stroke-width", 4);
+                                //Calling the drawlinechart function if the data is available
+                                if(d.Fate=='Died') 
+                                  cry();
+                                else
+                                  smile();
+                        });
 
                         
                 })
