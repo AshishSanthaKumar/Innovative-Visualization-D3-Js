@@ -48,6 +48,13 @@ var rectangle_pink = svg.append("rect")
                     .attr("width", 350)
                     .attr("height", 500);
 
+var rectangle_green = svg_face.append("rect")
+                    .attr("class","rectFate")
+                    .attr("x", -50)
+                    .attr("y", -10)
+                    .attr("width", 700)
+                    .attr("height", 500);
+
 var rectangle_blue = svg.append("rect")
                     .attr("class","rectAlive")
                     .attr("x", 300)
@@ -109,7 +116,28 @@ var line5 = svg.append('line')
 
 
 
-//Labels in the main SVG
+//Labels 
+
+//Fate description
+
+svg_face.append("text")
+        .attr("y", 50)
+        .attr("x", 85)
+        .text("*Hover over the points on the rocket (left) to reveal the fate of the dog")
+        .style("color","black")
+        .style("font-size","14px")
+        .style("font-weight","300");
+
+//FATE Label
+
+svg_face.append("text")
+        .attr("y", 20)
+        .attr("x", 245)
+        .text("DOG'S FATE")
+        .style("color","black")
+        .style("font-size","24px")
+        .style("font-weight","600")
+        .style("text-decoration","underline");
 
 //GENDER LABEL - Female
 svg.append("text")
@@ -130,6 +158,18 @@ svg.append("text")
         .style("font-size","24px")
         .style("font-weight","600")
         .style("text-decoration","underline"); 
+
+//Atltitude label
+
+svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 295)
+        .attr("x", -285)
+        .text("A L T I T U D E")
+        .style("z-index", "100")
+        .style("color","black")
+        .style("font-size","14px")
+        .style("font-weight","400"); 
 
 
     //100 label
@@ -198,7 +238,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 "X":d.X,
                                 "Y":d.Y,
                                 "Name":d.Name,
-                                "Fate":d.Fate
+                                "Fate":d.Fate,
+                                "Altitude":d.Altitude
                         });
 
                 })
@@ -218,12 +259,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         .style("stroke","black")
                         .on('mouseover', function(d,i) {
                                 //Setting Cyan Border and making the tooltip visible
-                                d3.select(this).style("stroke", 'cyan').style("stroke-width", 4);
-                                div.html("Dog's Name: "+d.Name)
+                                d3.select(this).style("stroke", 'green').style("stroke-width", 4);
+                                div.html("Dog's Name: "+d.Name+"<br> Altitude: "+d.Altitude)
                                 .style("left", (d3.event.pageX + 10) + "px")
                                 .style("top", (d3.event.pageY - 15) + "px")
                                 .style("visibility", "visible")
                                 .attr("data-html", "true");
+                                if(d.Fate=='Died') 
+                                  cry();
+                                else
+                                  smile();
                         })
                         .on('mousemove',function(d,i) {
                                 d3.select(this).transition()
@@ -233,23 +278,17 @@ document.addEventListener('DOMContentLoaded', function() {
                                 .duration(50)
                                 .style("opacity", 1);
                 
-                                div.html("Dog's Name: "+d.Name)
+                                div.html("Dog's Name: "+d.Name+"<br> Altitude: "+d.Altitude)
                                      .style("left", (d3.event.pageX + 10) + "px")
                                      .style("top", (d3.event.pageY - 15) + "px");
+
+                                
                           })
                           .on('mouseout', function(d,i) {
                                 d3.select(this).style("stroke", 'black').style("stroke-width", 1);
                                 div.style("visibility", "hidden");
-                        })
-                        .on('click', function(d,i) {
-                                svg_face.selectAll("*").remove();
-                                d3.select(this).style("stroke", 'cyan')
-                                .style("stroke-width", 4);
-                                //Calling the drawlinechart function if the data is available
-                                if(d.Fate=='Died') 
-                                  cry();
-                                else
-                                  smile();
+                                svg_face.selectAll('.smiley').remove();
+                                svg_face.selectAll('.fatelabel').remove();
                         });
 
                         
@@ -258,29 +297,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-smile();
 
 function smile(){
-        console.log(data);
+
+    svg_face.append("text")
+                .attr("class","fatelabel")
+                .attr("y", 350)
+                .attr("x", 272)
+                .text("SURVIVED")
+                .style("color","black")
+                .style("opacity",0.5)
+                .style("font-size","20px")
+                .style("font-weight","500");
+
+
     svg_face.append("circle")
+        .attr("class","smiley")
             .attr("r",100)
             .attr("cx",320)
             .attr("cy",200)
-            .style("fill","yellow");
+            .style("fill","rgb(224, 236, 92)");
 
     svg_face.append("circle")
+    .attr("class","smiley")
             .attr("r",10)
             .attr("cx",290)
             .attr("cy",170)
             .style("fill","black");
     
     svg_face.append("circle")
+    .attr("class","smiley")
             .attr("r",10)
             .attr("cx",360)
             .attr("cy",170)
             .style("fill","black");
 
     svg_face.append('line')
+    .attr("class","smiley")
             .style("stroke", "black")
             .style("stroke-width", 7)
             .style("opacity",1)
@@ -290,6 +343,7 @@ function smile(){
             .attr("y2", 230);
 
     svg_face.append('line')
+    .attr("class","smiley")
             .style("stroke", "black")
             .style("stroke-width", 7)
             .style("opacity",1)
@@ -305,31 +359,47 @@ function smile(){
             .endAngle(Math.PI * 3/2); //just radians
         
     svg_face.append("path")
+    .attr("class","smiley")
             .attr("d", arc)
             .attr("transform", "translate(320,215)");
 
 }
 
 function cry(){
+
+svg_face.append("text")
+        .attr("class","fatelabel")
+        .attr("y", 350)
+        .attr("x", 295)
+        .text("DIED")
+        .style("color","black")
+        .style("opacity",0.5)
+        .style("font-size","20px")
+        .style("font-weight","500");
+
     svg_face.append("circle")
+    .attr("class","smiley")
             .attr("r",100)
             .attr("cx",320)
             .attr("cy",200)
             .style("fill","grey");
 
     svg_face.append("circle")
+    .attr("class","smiley")
             .attr("r",10)
             .attr("cx",290)
             .attr("cy",170)
             .style("fill","black");
     
     svg_face.append("circle")
+    .attr("class","smiley")
             .attr("r",10)
             .attr("cx",360)
             .attr("cy",170)
             .style("fill","black");
 
     svg_face.append('line')
+    .attr("class","smiley")
             .style("stroke", "black")
             .style("stroke-width", 7)
             .style("opacity",1)
@@ -339,6 +409,7 @@ function cry(){
             .attr("y2", 230);
 
     svg_face.append('line')
+    .attr("class","smiley")
             .style("stroke", "black")
             .style("stroke-width", 7)
             .style("opacity",1)
@@ -354,339 +425,8 @@ function cry(){
             .endAngle(7.2); //just radians Math.PI * 3/2
         
     svg_face.append("path")
+    .attr("class","smiley")
             .attr("d", arc)
             .attr("transform", "translate(325,300)");
 
 }
-
-
-
-
-// //Male - 100
-
-//         //Dezik
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",340)
-//                     .attr("cy",450)
-//                     .style("fill","blue");
-            
-//         //Gypsy
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",355)
-//                     .attr("cy",450)
-//                     .style("fill","blue");
-
-//         //siskin
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",370)
-//                     .attr("cy",450)
-//                     .style("fill","blue");
-
-//         //Little bear
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",385)
-//                     .attr("cy",450)
-//                     .style("fill","blue");
-
-//         //Ginger
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",400)
-//                     .attr("cy",450)
-//                     .style("fill","blue");
-
-//         //Courageous
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",418)
-//                     .attr("cy",450)
-//                     .style("fill","blue");
-
-//         //Scamp
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",406)
-//                     .attr("cy",429)
-//                     .style("fill","blue");
-
-//         //Bobik
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",394)
-//                     .attr("cy",413)
-//                     .style("fill","blue");
-
-//         //Ginger II
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",381)
-//                     .attr("cy",394)
-//                     .style("fill","blue");
-
-
-//         //Little bear II
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",372)
-//                     .attr("cy",380)
-//                     .style("fill","blue");
-                
-//  //Male - 212
-
-//         //Small fry
-//         svg.append("circle")
-//                 .attr("r",4)
-//                 .attr("cx",366)
-//                 .attr("cy",305)
-//                 .style("fill","blue");
-
-// // Male 451
-
-//         //Fluffy
-//         svg.append("circle")
-//                 .attr("r",4)
-//                 .attr("cx",366)
-//                 .attr("cy",180)
-//                 .style("fill","blue");
-
-// // Male Orbital
-
-//         //Little Piece of Coal
-//         svg.append("circle")
-//                 .attr("r",4)
-//                 .attr("cx",353)
-//                 .attr("cy",100)
-//                 .style("fill","blue");
-
-//         //Little Wind
-//         svg.append("circle")
-//                 .attr("r",4)
-//                 .attr("cx",339)
-//                 .attr("cy",80)
-//                 .style("fill","blue");
-
-
-// //Female - 100
-
-//         //fox
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",228)
-//                     .attr("cy",380)
-//                     .style("fill","red");
-
-//         //fox II
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",218)
-//                     .attr("cy",394)
-//                     .style("fill","red");
-
-//         //Little lady
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",206)
-//                     .attr("cy",413)
-//                     .style("fill","red");
-
-//         //Rita
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",195)
-//                     .attr("cy",429)
-//                     .style("fill","red");
-        
-//         //Linda
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",181)
-//                     .attr("cy",450)
-//                     .style("fill","red");
-
-//         //Bulba
-//         svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",200)
-//                     .attr("cy",450)
-//                     .style("fill","red");
-
-//          //Little one
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",215)
-//                     .attr("cy",450)
-//                     .style("fill","red");
-
-//          //Whitey
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",230)
-//                     .attr("cy",450)
-//                     .style("fill","red");    
-
-// //Female 212
-
-//          //Dzhoyna
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",360)
-//                     .style("fill","red");    
-
-//          //Redhead
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",340)
-//                     .style("fill","red"); 
-
-//          //Fashionable
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",320)
-//                     .style("fill","red"); 
-
-//          //Bitter
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",300)
-//                     .style("fill","red");
-
-//          //Palm II
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",280)
-//                     .style("fill","red");
-
-//          //Snowflake
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",260)
-//                     .style("fill","red");
-
-// //Female 451
-
-//          //Button
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",220)
-//                     .style("fill","red");
-
-//          //Palm
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",200)
-//                     .style("fill","red");
-
-//          //Little Whitey
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",180)
-//                     .style("fill","red");
-
-//          //Spotted
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",160)
-//                     .style("fill","red");
-
-//          //Zhulba
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",140)
-//                     .style("fill","red");
-
-
-// //Female Orbital
-
-//          //Squirrel
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",287)
-//                     .attr("cy",40)
-//                     .style("fill","red");
-
-//          //Barker
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",277)
-//                     .attr("cy",55)
-//                     .style("fill","red");
-
-//          //Little Fox
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",267)
-//                     .attr("cy",70)
-//                     .style("fill","red");
-
-//          //Panther
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",257)
-//                     .attr("cy",85)
-//                     .style("fill","red");
-
-//          //Little Arrow
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",247)
-//                     .attr("cy",100)
-//                     .style("fill","red");
-
-//          //Little Fly
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",235)
-//                     .attr("cy",118)
-//                     .style("fill","red");
-
-//          //Little Bee
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",247)
-//                     .attr("cy",118)
-//                     .style("fill","red");
-
-//          //Joke
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",262)
-//                     .attr("cy",118)
-//                     .style("fill","red");
-
-//          //Blackie
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",277)
-//                     .attr("cy",118)
-//                     .style("fill","red");
-
-//          //Comet
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",292)
-//                     .attr("cy",118)
-//                     .style("fill","red");
-
-//          //Little star
-//          svg.append("circle")
-//                     .attr("r",4)
-//                     .attr("cx",295)
-//                     .attr("cy",27)
-//                     .style("fill","transparent")
-//                     .style("opacity","1")
-//                     .style("stroke","black");

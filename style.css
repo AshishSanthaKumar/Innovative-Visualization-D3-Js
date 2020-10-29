@@ -43,6 +43,14 @@ p {
     fill: cornflowerblue;
 }
 
+.rectFate{
+    
+    opacity: 0.5;
+    stroke-width: 1;
+    stroke: black;
+    fill: rgb(131, 153, 90);
+  }
+
 .rocket{
     opacity: 0.1;
     stroke-width: 2;
@@ -50,13 +58,13 @@ p {
 }
 
 div.tooltip-map {
-    position: absolute;
     text-align: center;
-    padding: .5rem;
+    padding: .2rem;
     background: #FFFFFF;
     color: #313639;
     border: 1px solid #313639;
     border-radius: 8px;
     pointer-events: none;
-    font-size: 1.3rem;
+    font-size: 0.7rem;
+    position: absolute;
   }

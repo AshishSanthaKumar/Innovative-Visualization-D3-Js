@@ -20,9 +20,9 @@ Little One,215,450,Female,1956,100,Survived
 Whitey,230,450,Female,1956,100,Survived
 Dzhoyna,235,360,Female,1957,212,Died
 Redhead,235,340,Female,1957,212,Died
-Squirrel,287,40,Female,1960,1000,Survived
+Squirrel,287,40,Female,1960,Orbital,Survived
 Fashionable,235,320,Female,1957,212,Survived
-Barker,277,55,Female,1957,1000,Died
+Barker,277,55,Female,1957,Orbital,Died
 Palm,235,200,Female,1958,451,Died
 Fluffy,366,180,Male,1958,451,Died
 Biter,235,300,Female,1958,212,Survived
@@ -32,14 +32,14 @@ Spotted,235,160,Female,1958,451,Survived
 Zhulba,235,140,Female,1958,451,Died
 Snowflake,235,260,Female,1960,212,Survived
 Small Fry,366,305,Male,1960,212,Survived
-Little Fox,267,70,Female,1960,1000,Died
-Panther,257,85,Female,1960,1000,Died
-Little Arrow,247,100,Female,1960,1000,Survived
-Little Fly,235,118,Female,1960,1000,Died
-Little Bee,247,118,Female,1960,1000,Died
-Joke,262,118,Female,1960,1000,Survived
-Blackie,277,118,Female,1961,1000,Survived
-Comet,292,118,Female,1960,1000,Survived
-Little Star,295,27,Female,1961,1000,Survived
-Little Piece of Coal,353,100,Male,1966,1000,Survived
-Little Wind,339,80,Male,1966,1000,Survived
+Little Fox,267,70,Female,1960,Orbital,Died
+Panther,257,85,Female,1960,Orbital,Died
+Little Arrow,247,100,Female,1960,Orbital,Survived
+Little Fly,235,118,Female,1960,Orbital,Died
+Little Bee,247,118,Female,1960,Orbital,Died
+Joke,262,118,Female,1960,Orbital,Survived
+Blackie,277,118,Female,1961,Orbital,Survived
+Comet,292,118,Female,1960,Orbital,Survived
+Little Star,295,27,Female,1961,Orbital,Survived
+Little Piece of Coal,353,100,Male,1966,Orbital,Survived
+Little Wind,339,80,Male,1966,Orbital,Survived
