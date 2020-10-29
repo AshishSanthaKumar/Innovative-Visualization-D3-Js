@@ -1,13 +1,17 @@
 //import { select, arc} from d3;
-var name;
-var gender;
+var Name;
+var Gender;
 var year;
 var altitude;
 var fate;
 var data;
-var x;
-var y;
+var X;
+var Y;
+var points;
+var tempX=[];
+var tempY=[];
 
+var cord=[];
 
 // Set the dimensions of the canvas / graph
 
@@ -97,6 +101,8 @@ var line5 = svg.append('line')
                     .attr("x2", 420)
                     .attr("y2", 450);
 
+
+
 //Labels in the main SVG
 
 //GENDER LABEL - Female
@@ -173,19 +179,48 @@ svg.append("text")
 // Get the data
 document.addEventListener('DOMContentLoaded', function() {
    
-    // Load both files before doing anything else
-    Promise.all([d3.csv('data/cleanData.csv')])
-            .then(function(values){
-      
-      data = values[0];
+                Promise.all([d3.csv('data/cleanData.csv')])
+                        .then(function(values){
+                
+                data = values[0];
 
-    })
-    
-  });
 
-cry();
+                data.map(function(d)
+                {
+
+                        cord.push({
+                                "X":d.X,
+                                "Y":d.Y,
+                                "Name":d.Name,
+                                "Gender":d.Gender
+                        });
+
+                })
+
+
+                //Plotting the points                
+                svg.append('g')
+                        .selectAll("dot")
+                        .data(cord)
+                        .enter()
+                        .append("circle")
+                        .attr("cx", function (d) { return d.X} )
+                        .attr("cy", function (d) { return d.Y } )
+                        .attr("r", 4)
+                        .style("fill","black")
+                        .style("opacity",0.5)
+                        .style("stroke","black");
+
+                        
+                })
+});
+
+
+
+smile();
 
 function smile(){
+        console.log(data);
     svg_face.append("circle")
             .attr("r",100)
             .attr("cx",320)
