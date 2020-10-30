@@ -18,7 +18,7 @@ var cord=[];
 
 const margin = {top: 10, right: 20, bottom: 90, left: 50};
 const width = 700 - margin.left - margin.right;
-const height = 570 - margin.top - margin.bottom;
+const height = 530 - margin.top - margin.bottom;
 
 //tooltip
 div = d3.select("body").append("div")
@@ -33,7 +33,7 @@ var svg = d3.select(".main").append("svg")
                            .append("g")
                            .attr("transform", `translate(${margin.left},${margin.top})`);    
 
-var svg_face = d3.select(".face").append("svg")
+var svg_face = d3.select(".main").append("svg")
                            .attr("width", width + margin.left + margin.right)
                            .attr("height", height + margin.top + margin.bottom)
                            .append("g")
@@ -72,7 +72,7 @@ var rectangle_rocket = svg.append("rect")
  var line1 = svg.append('line')
                     .style("stroke", "black")
                     .style("stroke-width", 1)
-                    .style("opacity",0.2)
+                    .style("opacity",0.5)
                     .attr("x1", 235)
                     .attr("y1", 120)
                     .attr("x2", 300)
@@ -81,7 +81,7 @@ var rectangle_rocket = svg.append("rect")
 var line2 = svg.append('line')
                     .style("stroke", "black")
                     .style("stroke-width", 1)
-                    .style("opacity",0.2)
+                    .style("opacity",0.5)
                     .attr("x1", 300)
                     .attr("y1", 20)
                     .attr("x2", 365)
@@ -90,7 +90,7 @@ var line2 = svg.append('line')
 var line3 = svg.append('line')
                     .style("stroke", "black")
                     .style("stroke-width", 1)
-                    .style("opacity",0.2)
+                    .style("opacity",0.5)
                     .attr("x1", 235)
                     .attr("y1", 370)
                     .attr("x2", 180)
@@ -99,7 +99,7 @@ var line3 = svg.append('line')
 var line4 = svg.append('line')
                     .style("stroke", "black")
                     .style("stroke-width", 1)
-                    .style("opacity",0.2)
+                    .style("opacity",0.5)
                     .attr("x1", 365)
                     .attr("y1", 370)
                     .attr("x2", 420)
@@ -108,7 +108,7 @@ var line4 = svg.append('line')
 var line5 = svg.append('line')
                     .style("stroke", "black")
                     .style("stroke-width", 1)
-                    .style("opacity",0.2)
+                    .style("opacity",0.5)
                     .attr("x1", 180)
                     .attr("y1", 450)
                     .attr("x2", 420)
@@ -136,8 +136,7 @@ svg_face.append("text")
         .text("DOG'S FATE")
         .style("color","black")
         .style("font-size","24px")
-        .style("font-weight","600")
-        .style("text-decoration","underline");
+        .style("font-weight","600");
 
 //GENDER LABEL - Female
 svg.append("text")
@@ -146,8 +145,7 @@ svg.append("text")
         .text("FEMALE")
         .style("color","black")
         .style("font-size","24px")
-        .style("font-weight","600")
-        .style("text-decoration","underline");
+        .style("font-weight","600");
         
 //GENDER LABEL - Male
 svg.append("text")
@@ -156,8 +154,7 @@ svg.append("text")
         .text("MALE")
         .style("color","black")
         .style("font-size","24px")
-        .style("font-weight","600")
-        .style("text-decoration","underline"); 
+        .style("font-weight","600"); 
 
 //Atltitude label
 
@@ -274,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         .attr("x", 362)
                                         .text("Last Mission was in :"+" "+d.Year)
                                         .style("color","black")
-                                        .style("opacity",0.5)
+                                        .style("opacity",1)
                                         .style("font-size","20px")
                                         .style("font-weight","500");
                                 
@@ -284,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         .attr("x", 82)
                                         .text("Name :"+" "+d.Name)
                                         .style("color","black")
-                                        .style("opacity",0.5)
+                                        .style("opacity",1)
                                         .style("font-size","20px")
                                         .style("font-weight","500");
                                 }
@@ -299,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         .attr("x", 362)
                                         .text("Last Mission was in :"+" "+d.Year)
                                         .style("color","black")
-                                        .style("opacity",0.5)
+                                        .style("opacity",1)
                                         .style("font-size","20px")
                                         .style("font-weight","500");
                                 
@@ -309,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         .attr("x", 82)
                                         .text("Name :"+" "+d.Name)
                                         .style("color","black")
-                                        .style("opacity",0.5)
+                                        .style("opacity",1)
                                         .style("font-size","20px")
                                         .style("font-weight","500");
                                 }
@@ -339,10 +336,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 svg_face.append("text")
                                 .attr("class","fatelabel")
                                 .attr("y", 350)
-                                .attr("x", 272)
+                                .attr("x", 276)
                                 .text("SURVIVED")
                                 .style("color","black")
-                                .style("opacity",0.5)
+                                .style("opacity",1)
                                 .style("font-size","20px")
                                 .style("font-weight","500");
                 
@@ -352,7 +349,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         .attr("r",100)
                         .attr("cx",320)
                         .attr("cy",200)
-                        .style("fill","rgb(224, 236, 92)");
+                        .style("fill","rgb(236, 224, 92)")
+                        .style("stroke",'black')
+                        .style("stroke-width",2);
                 
                 svg_face.append("circle")
                 .attr("class","smiley")
@@ -409,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         .attr("x", 305)
                         .text("DIED")
                         .style("color","black")
-                        .style("opacity",0.5)
+                        .style("opacity",1)
                         .style("font-size","20px")
                         .style("font-weight","500");
                 
@@ -418,7 +417,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         .attr("r",100)
                         .attr("cx",320)
                         .attr("cy",200)
-                        .style("fill","grey");
+                        .style("fill","rgb(236, 224, 92)")
+                        .style("stroke",'black')
+                        .style("stroke-width",2);
                 
                 svg_face.append("circle")
                 .attr("class","smiley")

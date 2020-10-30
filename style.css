@@ -1,3 +1,7 @@
+#dogs{
+  text-align: center;
+  font-size: larger;
+}
 
 h2, h3, h4, span {
     text-align: center;
@@ -9,23 +13,13 @@ p {
 }
 
 .main {
-    position: absolute;
-    left: 25%;
-    top: 75%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-
-  .face {
-    position: absolute;
-    left: 75%;
-    top: 75%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    
+    margin: auto;
+    width: 1400px;
   }
 
   .rectDead{
-    fill: pink;
+    fill: rgb(240, 188, 197);
     opacity: 0.5;
     stroke-width: 1;
     stroke: black;
@@ -35,22 +29,23 @@ p {
     opacity: 0.5;
     stroke-width: 1;
     stroke: black;
-    fill: cornflowerblue;
+    fill: rgb(155, 186, 245);
 }
 
 .rectFate{
     
     opacity: 0.5;
-    stroke-width: 1;
+    stroke-width: 3;
     stroke: black;
-    fill: rgb(131, 153, 90);
+    fill: rgb(193, 206, 172);
   }
 
 .rocket{
-    opacity: 0.1;
-    stroke-width: 2;
+    opacity: 0.5;
+    stroke-width: 1;
     stroke: black;
-}
+    fill: transparent;
+  }
 
 div.tooltip-map {
     text-align: center;
