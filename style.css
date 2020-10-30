@@ -11,7 +11,11 @@ p {
     text-align: justify;
     text-justify: inter-word;
 }
-
+#description{
+    margin: auto;
+    text-align: justify;
+    width: 1400px;
+}
 .main {
     
     margin: auto;
