@@ -25,13 +25,13 @@ p {
   .rectDead{
     fill: rgb(240, 188, 197);
     opacity: 0.5;
-    stroke-width: 1;
+    stroke-width: 2;
     stroke: black;
   }
 
 .rectAlive{
     opacity: 0.5;
-    stroke-width: 1;
+    stroke-width: 2;
     stroke: black;
     fill: rgb(155, 186, 245);
 }
@@ -39,7 +39,7 @@ p {
 .rectFate{
     
     opacity: 0.5;
-    stroke-width: 3;
+    stroke-width: 2;
     stroke: black;
     fill: rgb(193, 206, 172);
   }

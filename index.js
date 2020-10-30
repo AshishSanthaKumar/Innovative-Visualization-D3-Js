@@ -46,14 +46,16 @@ var rectangle_pink = svg.append("rect")
                     .attr("x", -50)
                     .attr("y", -10)
                     .attr("width", 350)
-                    .attr("height", 500);
+                    .attr("height", 500)
+                    .style("stroke","black");
 
 var rectangle_green = svg_face.append("rect")
                     .attr("class","rectFate")
                     .attr("x", -50)
                     .attr("y", -10)
                     .attr("width", 700)
-                    .attr("height", 500);
+                    .attr("height", 500)
+                    .style("stroke","black");
 
 var rectangle_blue = svg.append("rect")
                     .attr("class","rectAlive")
