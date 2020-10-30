@@ -16,7 +16,7 @@ var cord=[];
 
 // Set the dimensions of the canvas / graph
 
-const margin = {top: 10, right: 20, bottom: 50, left: 50};
+const margin = {top: 10, right: 20, bottom: 90, left: 50};
 const width = 700 - margin.left - margin.right;
 const height = 570 - margin.top - margin.bottom;
 
@@ -239,7 +239,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 "Y":d.Y,
                                 "Name":d.Name,
                                 "Fate":d.Fate,
-                                "Altitude":d.Altitude
+                                "Altitude":d.Altitude,
+                                "Year":d.Year
                         });
 
                 })
@@ -265,10 +266,53 @@ document.addEventListener('DOMContentLoaded', function() {
                                 .style("top", (d3.event.pageY - 15) + "px")
                                 .style("visibility", "visible")
                                 .attr("data-html", "true");
-                                if(d.Fate=='Died') 
+                                if(d.Fate=='Died'){ 
                                   cry();
-                                else
+                                  svg_face.append("text")
+                                        .attr("class","fatelabel")
+                                        .attr("y", 470)
+                                        .attr("x", 362)
+                                        .text("Last Mission was in :"+" "+d.Year)
+                                        .style("color","black")
+                                        .style("opacity",0.5)
+                                        .style("font-size","20px")
+                                        .style("font-weight","500");
+                                
+                                svg_face.append("text")
+                                        .attr("class","fatelabel")
+                                        .attr("y", 470)
+                                        .attr("x", 82)
+                                        .text("Name :"+" "+d.Name)
+                                        .style("color","black")
+                                        .style("opacity",0.5)
+                                        .style("font-size","20px")
+                                        .style("font-weight","500");
+                                }
+
+                                else{
                                   smile();
+                                
+
+                                  svg_face.append("text")
+                                        .attr("class","fatelabel")
+                                        .attr("y", 470)
+                                        .attr("x", 362)
+                                        .text("Last Mission was in :"+" "+d.Year)
+                                        .style("color","black")
+                                        .style("opacity",0.5)
+                                        .style("font-size","20px")
+                                        .style("font-weight","500");
+                                
+                                svg_face.append("text")
+                                        .attr("class","fatelabel")
+                                        .attr("y", 470)
+                                        .attr("x", 82)
+                                        .text("Name :"+" "+d.Name)
+                                        .style("color","black")
+                                        .style("opacity",0.5)
+                                        .style("font-size","20px")
+                                        .style("font-weight","500");
+                                }
                         })
                         .on('mousemove',function(d,i) {
                                 d3.select(this).transition()
@@ -290,7 +334,139 @@ document.addEventListener('DOMContentLoaded', function() {
                                 svg_face.selectAll('.smiley').remove();
                                 svg_face.selectAll('.fatelabel').remove();
                         });
-
+        function smile(){
+                
+                svg_face.append("text")
+                                .attr("class","fatelabel")
+                                .attr("y", 350)
+                                .attr("x", 272)
+                                .text("SURVIVED")
+                                .style("color","black")
+                                .style("opacity",0.5)
+                                .style("font-size","20px")
+                                .style("font-weight","500");
+                
+                
+                svg_face.append("circle")
+                        .attr("class","smiley")
+                        .attr("r",100)
+                        .attr("cx",320)
+                        .attr("cy",200)
+                        .style("fill","rgb(224, 236, 92)");
+                
+                svg_face.append("circle")
+                .attr("class","smiley")
+                        .attr("r",10)
+                        .attr("cx",290)
+                        .attr("cy",170)
+                        .style("fill","black");
+                
+                svg_face.append("circle")
+                .attr("class","smiley")
+                        .attr("r",10)
+                        .attr("cx",360)
+                        .attr("cy",170)
+                        .style("fill","black");
+                
+                svg_face.append('line')
+                .attr("class","smiley")
+                        .style("stroke", "black")
+                        .style("stroke-width", 7)
+                        .style("opacity",1)
+                        .attr("x1", 320)
+                        .attr("y1", 190)
+                        .attr("x2", 320)
+                        .attr("y2", 230);
+                
+                svg_face.append('line')
+                .attr("class","smiley")
+                        .style("stroke", "black")
+                        .style("stroke-width", 7)
+                        .style("opacity",1)
+                        .attr("x1", 320)
+                        .attr("y1", 230)
+                        .attr("x2", 330)
+                        .attr("y2", 220);
+                
+                var arc = d3.arc()
+                        .innerRadius(50)
+                        .outerRadius(60)
+                        .startAngle(Math.PI/2) //converting from degs to radians
+                        .endAngle(Math.PI * 3/2); //just radians
+                        
+                svg_face.append("path")
+                .attr("class","smiley")
+                        .attr("d", arc)
+                        .attr("transform", "translate(320,215)");
+                
+                }
+                
+                function cry(){
+                
+                svg_face.append("text")
+                        .attr("class","fatelabel")
+                        .attr("y", 350)
+                        .attr("x", 305)
+                        .text("DIED")
+                        .style("color","black")
+                        .style("opacity",0.5)
+                        .style("font-size","20px")
+                        .style("font-weight","500");
+                
+                svg_face.append("circle")
+                .attr("class","smiley")
+                        .attr("r",100)
+                        .attr("cx",320)
+                        .attr("cy",200)
+                        .style("fill","grey");
+                
+                svg_face.append("circle")
+                .attr("class","smiley")
+                        .attr("r",10)
+                        .attr("cx",290)
+                        .attr("cy",170)
+                        .style("fill","black");
+                
+                svg_face.append("circle")
+                .attr("class","smiley")
+                        .attr("r",10)
+                        .attr("cx",360)
+                        .attr("cy",170)
+                        .style("fill","black");
+                
+                svg_face.append('line')
+                .attr("class","smiley")
+                        .style("stroke", "black")
+                        .style("stroke-width", 7)
+                        .style("opacity",1)
+                        .attr("x1", 320)
+                        .attr("y1", 190)
+                        .attr("x2", 320)
+                        .attr("y2", 230);
+                
+                svg_face.append('line')
+                .attr("class","smiley")
+                        .style("stroke", "black")
+                        .style("stroke-width", 7)
+                        .style("opacity",1)
+                        .attr("x1", 320)
+                        .attr("y1", 230)
+                        .attr("x2", 330)
+                        .attr("y2", 220);
+                
+                var arc = d3.arc()
+                        .innerRadius(50)
+                        .outerRadius(60)
+                        .startAngle(5.3) //converting from degs to radians
+                        .endAngle(7.2); //just radians Math.PI * 3/2
+                        
+                svg_face.append("path")
+                .attr("class","smiley")
+                        .attr("d", arc)
+                        .attr("transform", "translate(325,300)");
+                
+                }
+                
                         
                 })
 });
@@ -298,135 +474,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function smile(){
-
-    svg_face.append("text")
-                .attr("class","fatelabel")
-                .attr("y", 350)
-                .attr("x", 272)
-                .text("SURVIVED")
-                .style("color","black")
-                .style("opacity",0.5)
-                .style("font-size","20px")
-                .style("font-weight","500");
-
-
-    svg_face.append("circle")
-        .attr("class","smiley")
-            .attr("r",100)
-            .attr("cx",320)
-            .attr("cy",200)
-            .style("fill","rgb(224, 236, 92)");
-
-    svg_face.append("circle")
-    .attr("class","smiley")
-            .attr("r",10)
-            .attr("cx",290)
-            .attr("cy",170)
-            .style("fill","black");
-    
-    svg_face.append("circle")
-    .attr("class","smiley")
-            .attr("r",10)
-            .attr("cx",360)
-            .attr("cy",170)
-            .style("fill","black");
-
-    svg_face.append('line')
-    .attr("class","smiley")
-            .style("stroke", "black")
-            .style("stroke-width", 7)
-            .style("opacity",1)
-            .attr("x1", 320)
-            .attr("y1", 190)
-            .attr("x2", 320)
-            .attr("y2", 230);
-
-    svg_face.append('line')
-    .attr("class","smiley")
-            .style("stroke", "black")
-            .style("stroke-width", 7)
-            .style("opacity",1)
-            .attr("x1", 320)
-            .attr("y1", 230)
-            .attr("x2", 330)
-            .attr("y2", 220);
-
-    var arc = d3.arc()
-            .innerRadius(50)
-            .outerRadius(60)
-            .startAngle(Math.PI/2) //converting from degs to radians
-            .endAngle(Math.PI * 3/2); //just radians
-        
-    svg_face.append("path")
-    .attr("class","smiley")
-            .attr("d", arc)
-            .attr("transform", "translate(320,215)");
-
-}
-
-function cry(){
-
-svg_face.append("text")
-        .attr("class","fatelabel")
-        .attr("y", 350)
-        .attr("x", 295)
-        .text("DIED")
-        .style("color","black")
-        .style("opacity",0.5)
-        .style("font-size","20px")
-        .style("font-weight","500");
-
-    svg_face.append("circle")
-    .attr("class","smiley")
-            .attr("r",100)
-            .attr("cx",320)
-            .attr("cy",200)
-            .style("fill","grey");
-
-    svg_face.append("circle")
-    .attr("class","smiley")
-            .attr("r",10)
-            .attr("cx",290)
-            .attr("cy",170)
-            .style("fill","black");
-    
-    svg_face.append("circle")
-    .attr("class","smiley")
-            .attr("r",10)
-            .attr("cx",360)
-            .attr("cy",170)
-            .style("fill","black");
-
-    svg_face.append('line')
-    .attr("class","smiley")
-            .style("stroke", "black")
-            .style("stroke-width", 7)
-            .style("opacity",1)
-            .attr("x1", 320)
-            .attr("y1", 190)
-            .attr("x2", 320)
-            .attr("y2", 230);
-
-    svg_face.append('line')
-    .attr("class","smiley")
-            .style("stroke", "black")
-            .style("stroke-width", 7)
-            .style("opacity",1)
-            .attr("x1", 320)
-            .attr("y1", 230)
-            .attr("x2", 330)
-            .attr("y2", 220);
-
-    var arc = d3.arc()
-            .innerRadius(50)
-            .outerRadius(60)
-            .startAngle(5.3) //converting from degs to radians
-            .endAngle(7.2); //just radians Math.PI * 3/2
-        
-    svg_face.append("path")
-    .attr("class","smiley")
-            .attr("d", arc)
-            .attr("transform", "translate(325,300)");
-
-}
