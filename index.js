@@ -120,6 +120,189 @@ var line5 = svg.append('line')
 
 //Labels 
 
+var line6 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.5)
+                    .attr("x1", 210)
+                    .attr("y1", 20)
+                    .attr("x2", 210)
+                    .attr("y2", 126);
+
+var line7 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.5)
+                    .attr("x1", 210)
+                    .attr("y1", 20)
+                    .attr("x2", 220)
+                    .attr("y2", 20);
+
+var line8 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.5)
+                    .attr("x1", 210)
+                    .attr("y1", 126)
+                    .attr("x2", 220)
+                    .attr("y2", 126);
+
+var line9 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.5)
+                    .attr("x1", 210)
+                    .attr("y1", 73)
+                    .attr("x2", 200)
+                    .attr("y2", 73);
+
+svg.append("text")
+        .attr("y", 78)
+        .attr("x", 150)
+        .text("Orbital")
+        .style("z-index", "100")
+        .style("color","black")
+        .style("font-size","16px")
+        .style("font-weight","400"); 
+
+
+var line10 = svg.append('line')
+        .style("stroke", "black")
+        .style("stroke-width", 1)
+        .style("opacity",0.5)
+        .attr("x1", 410)
+        .attr("y1", 125)
+        .attr("x2", 410)
+        .attr("y2", 246);
+
+var line11 = svg.append('line')
+        .style("stroke", "black")
+        .style("stroke-width", 1)
+        .style("opacity",0.5)
+        .attr("x1", 410)
+        .attr("y1", 125)
+        .attr("x2", 400)
+        .attr("y2", 125);
+
+var line12 = svg.append('line')
+        .style("stroke", "black")
+        .style("stroke-width", 1)
+        .style("opacity",0.5)
+        .attr("x1", 410)
+        .attr("y1", 246)
+        .attr("x2", 400)
+        .attr("y2", 246);
+
+var line13 = svg.append('line')
+        .style("stroke", "black")
+        .style("stroke-width", 1)
+        .style("opacity",0.5)
+        .attr("x1", 410)
+        .attr("y1", 185)
+        .attr("x2", 420)
+        .attr("y2", 185);
+
+svg.append("text")
+//.attr("transform", "rotate(90)")
+.attr("y", 190)
+.attr("x", 430)
+.text("451 KM")
+.style("z-index", "100")
+.style("color","black")
+.style("font-size","16px")
+.style("font-weight","400"); 
+
+
+var line14 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.5)
+                    .attr("x1", 210)
+                    .attr("y1", 250)
+                    .attr("x2", 210)
+                    .attr("y2", 366);
+
+var line15 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.5)
+                    .attr("x1", 210)
+                    .attr("y1", 250)
+                    .attr("x2", 220)
+                    .attr("y2", 250);
+
+var line16 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.5)
+                    .attr("x1", 210)
+                    .attr("y1", 366)
+                    .attr("x2", 220)
+                    .attr("y2", 366);
+
+var line17 = svg.append('line')
+                    .style("stroke", "black")
+                    .style("stroke-width", 1)
+                    .style("opacity",0.5)
+                    .attr("x1", 210)
+                    .attr("y1", 308)
+                    .attr("x2", 200)
+                    .attr("y2", 308);
+
+svg.append("text")
+        .attr("y", 313)
+        .attr("x", 140)
+        .text("212 KM")
+        .style("z-index", "100")
+        .style("color","black")
+        .style("font-size","16px")
+        .style("font-weight","400");
+        
+var line18 = svg.append('line')
+        .style("stroke", "black")
+        .style("stroke-width", 1)
+        .style("opacity",0.5)
+        .attr("x1", 460)
+        .attr("y1", 365)
+        .attr("x2", 460)
+        .attr("y2", 456);
+
+var line19 = svg.append('line')
+        .style("stroke", "black")
+        .style("stroke-width", 1)
+        .style("opacity",0.5)
+        .attr("x1", 460)
+        .attr("y1", 365)
+        .attr("x2", 450)
+        .attr("y2", 365);
+
+var line20 = svg.append('line')
+        .style("stroke", "black")
+        .style("stroke-width", 1)
+        .style("opacity",0.5)
+        .attr("x1", 460)
+        .attr("y1", 456)
+        .attr("x2", 450)
+        .attr("y2", 456);
+
+var line21 = svg.append('line')
+        .style("stroke", "black")
+        .style("stroke-width", 1)
+        .style("opacity",0.5)
+        .attr("x1", 460)
+        .attr("y1", 410)
+        .attr("x2", 470)
+        .attr("y2", 410);
+
+svg.append("text")
+.attr("y", 415)
+.attr("x", 480)
+.text("100 KM")
+.style("z-index", "100")
+.style("color","black")
+.style("font-size","16px")
+.style("font-weight","400"); 
+
 //Fate description
 
 svg_face.append("text")
@@ -163,61 +346,13 @@ svg.append("text")
 svg.append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 295)
-        .attr("x", -285)
-        .text("A L T I T U D E")
+        .attr("x", -335)
+        .text("< - - - A L T I T U D E - - - >")
         .style("z-index", "100")
         .style("color","black")
         .style("font-size","14px")
         .style("font-weight","400"); 
 
-
-    //100 label
-
-    svg.append("text")
-            .attr("transform", "rotate(90)")
-            .attr("y", -305)
-            .attr("x", 378)
-            .text("<--100-->")
-            .style("z-index", "100")
-            .style("color","black")
-            .style("font-size","14px")
-            .style("font-weight","400"); 
-
-    //212 label
-
-    svg.append("text")
-            .attr("transform", "rotate(90)")
-            .attr("y", -305)
-            .attr("x", 245)
-            .text("<------212------>")
-            .style("z-index", "100")
-            .style("color","black")
-            .style("font-size","14px")
-            .style("font-weight","400"); 
-
-    //451 label
-
-    svg.append("text")
-            .attr("transform", "rotate(90)")
-            .attr("y", -305)
-            .attr("x", 120)
-            .text("<------451------>")
-            .style("z-index", "100")
-            .style("color","black")
-            .style("font-size","14px")
-            .style("font-weight","400"); 
-
-    //Orbital label
-
-    svg.append("text")
-            .attr("transform", "rotate(90)")
-            .attr("y", -305)
-            .attr("x", 30)
-            .text("<--orbital-->")
-            .style("z-index", "100")
-            .style("color","black")
-            .style("font-size","14px")
-            .style("font-weight","400"); 
 
 
 
