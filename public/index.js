@@ -359,7 +359,7 @@ svg.append("text")
 // Get the data
 document.addEventListener('DOMContentLoaded', function() {
    
-                Promise.all([d3.csv('data/cleanData.csv')])
+                Promise.all([d3.csv('https://raw.githubusercontent.com/AshishSanthaKumar/Innovative-Visualization-D3-Js/main/public/Data/cleanData.csv')])
                         .then(function(values){
                 
                 data = values[0];
